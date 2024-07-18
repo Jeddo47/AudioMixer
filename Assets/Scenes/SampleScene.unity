@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 1695022}
   - component: {fileID: 1695021}
   - component: {fileID: 1695020}
+  - component: {fileID: 1695023}
   m_Layer: 5
   m_Name: PlaySoundBullet
   m_TagString: Untagged
@@ -206,19 +207,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1695021}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 973315493}
-        m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
-        m_MethodName: PlayButtonSound
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2125812007}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1695021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,6 +246,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695018}
   m_CullTransparentMesh: 1
+--- !u!114 &1695023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44101d87967bb0a42b01649bac809527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 1695020}
+  _buttonSound: {fileID: 2125812007}
 --- !u!1 &105635221
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,6 +398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 126551688}
   - component: {fileID: 126551689}
+  - component: {fileID: 126551690}
   m_Layer: 5
   m_Name: MasterVolume
   m_TagString: Untagged
@@ -476,19 +480,23 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 973315493}
-        m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
-        m_MethodName: ChangeMasterVolume
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 126551689}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &126551690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126551687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a54f52108b7554c8b020c4330c4c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _volumeSlider: {fileID: 126551689}
+  _audioMixerGroup: {fileID: 24300002, guid: efd8cc404526dba4bbd8ee04d96a3744, type: 2}
+  _audioMixerGroupName: MasterVolume
+  _SoundMuter: {fileID: 500446821}
 --- !u!1 &170602299
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,8 +763,9 @@ GameObject:
   - component: {fileID: 500446820}
   - component: {fileID: 500446819}
   - component: {fileID: 500446818}
+  - component: {fileID: 500446821}
   m_Layer: 5
-  m_Name: SoundEnabler
+  m_Name: SoundMuter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -826,19 +835,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 500446819}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 973315493}
-        m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
-        m_MethodName: ToggleSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &500446819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -877,6 +874,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500446816}
   m_CullTransparentMesh: 1
+--- !u!114 &500446821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500446816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a990c5a230ce24283f94f7025dce0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 500446818}
+  _audioMixerGroup: {fileID: 24300002, guid: efd8cc404526dba4bbd8ee04d96a3744, type: 2}
 --- !u!1 &546100606
 GameObject:
   m_ObjectHideFlags: 0
@@ -1793,7 +1804,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 973315492}
-  - component: {fileID: 973315493}
   m_Layer: 5
   m_Name: Audio
   m_TagString: Untagged
@@ -1828,19 +1838,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &973315493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 973315491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17399a55bfb4ccb4a8054c951b1b3db0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _audioMixer: {fileID: 24300002, guid: efd8cc404526dba4bbd8ee04d96a3744, type: 2}
 --- !u!1 &1018845770
 GameObject:
   m_ObjectHideFlags: 0
@@ -2349,6 +2346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1356121500}
   - component: {fileID: 1356121501}
+  - component: {fileID: 1356121502}
   m_Layer: 5
   m_Name: MusicVolume
   m_TagString: Untagged
@@ -2430,19 +2428,23 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 973315493}
-        m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
-        m_MethodName: ChangeMusicVolume
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1356121501}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &1356121502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356121499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a54f52108b7554c8b020c4330c4c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _volumeSlider: {fileID: 1356121501}
+  _audioMixerGroup: {fileID: 24300002, guid: efd8cc404526dba4bbd8ee04d96a3744, type: 2}
+  _audioMixerGroupName: MusicVolume
+  _SoundMuter: {fileID: 500446821}
 --- !u!1 &1368602526
 GameObject:
   m_ObjectHideFlags: 0
@@ -2455,6 +2457,7 @@ GameObject:
   - component: {fileID: 1368602530}
   - component: {fileID: 1368602529}
   - component: {fileID: 1368602528}
+  - component: {fileID: 1368602531}
   m_Layer: 5
   m_Name: PlaySoundPunch
   m_TagString: Untagged
@@ -2526,19 +2529,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1368602529}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 973315493}
-        m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
-        m_MethodName: PlayButtonSound
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 105635224}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1368602529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2577,6 +2568,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368602526}
   m_CullTransparentMesh: 1
+--- !u!114 &1368602531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368602526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44101d87967bb0a42b01649bac809527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 1368602528}
+  _buttonSound: {fileID: 105635224}
 --- !u!1 &1437844623
 GameObject:
   m_ObjectHideFlags: 0
@@ -2798,6 +2803,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1461224451}
   - component: {fileID: 1461224452}
+  - component: {fileID: 1461224453}
   m_Layer: 5
   m_Name: ButtonsVolume
   m_TagString: Untagged
@@ -2879,19 +2885,23 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 973315493}
-        m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
-        m_MethodName: ChangeSoundEffectsVolume
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1461224452}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &1461224453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461224450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a54f52108b7554c8b020c4330c4c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _volumeSlider: {fileID: 1461224452}
+  _audioMixerGroup: {fileID: 24300002, guid: efd8cc404526dba4bbd8ee04d96a3744, type: 2}
+  _audioMixerGroupName: SoundEffectsVolume
+  _SoundMuter: {fileID: 500446821}
 --- !u!1 &1525039431
 GameObject:
   m_ObjectHideFlags: 0
@@ -3499,6 +3509,7 @@ GameObject:
   - component: {fileID: 2029376650}
   - component: {fileID: 2029376649}
   - component: {fileID: 2029376648}
+  - component: {fileID: 2029376651}
   m_Layer: 5
   m_Name: PlaySoundCannon
   m_TagString: Untagged
@@ -3570,19 +3581,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2029376649}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 973315493}
-        m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
-        m_MethodName: PlayButtonSound
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 721759586}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2029376649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3621,6 +3620,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029376646}
   m_CullTransparentMesh: 1
+--- !u!114 &2029376651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029376646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44101d87967bb0a42b01649bac809527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 2029376648}
+  _buttonSound: {fileID: 721759586}
 --- !u!1 &2049391702
 GameObject:
   m_ObjectHideFlags: 0
