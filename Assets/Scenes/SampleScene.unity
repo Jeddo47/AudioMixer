@@ -496,7 +496,7 @@ MonoBehaviour:
   _volumeSlider: {fileID: 126551689}
   _audioMixerGroup: {fileID: 24300002, guid: efd8cc404526dba4bbd8ee04d96a3744, type: 2}
   _audioMixerGroupName: MasterVolume
-  _SoundMuter: {fileID: 500446821}
+  _soundMuter: {fileID: 500446821}
 --- !u!1 &170602299
 GameObject:
   m_ObjectHideFlags: 0
@@ -2444,7 +2444,7 @@ MonoBehaviour:
   _volumeSlider: {fileID: 1356121501}
   _audioMixerGroup: {fileID: 24300002, guid: efd8cc404526dba4bbd8ee04d96a3744, type: 2}
   _audioMixerGroupName: MusicVolume
-  _SoundMuter: {fileID: 500446821}
+  _soundMuter: {fileID: 500446821}
 --- !u!1 &1368602526
 GameObject:
   m_ObjectHideFlags: 0
@@ -2901,7 +2901,7 @@ MonoBehaviour:
   _volumeSlider: {fileID: 1461224452}
   _audioMixerGroup: {fileID: 24300002, guid: efd8cc404526dba4bbd8ee04d96a3744, type: 2}
   _audioMixerGroupName: SoundEffectsVolume
-  _SoundMuter: {fileID: 500446821}
+  _soundMuter: {fileID: 500446821}
 --- !u!1 &1525039431
 GameObject:
   m_ObjectHideFlags: 0
